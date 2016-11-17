@@ -8,12 +8,12 @@ public:
 class CpuMatrix : public Matrix {
 public:
   void rand() { data_ = 1.0f / (std::rand() % 10);}
-  void add(CpuMatrix B, float c) { data_ = B.data_ + c; }
+  void add(const CpuMatrix& B, float c) { data_ = B.data_ + c; }
 };
 
 class GpuMatrix : public Matrix {
 public:
   void rand() { data_ = 1.0f / (std::rand() % 10);}
-  void add(GpuMatrix B, float c) { data_ = B.data_ + c; }
+  void add(const GpuMatrix& B, float c) { data_ = B.data_ + c; }
 };
 

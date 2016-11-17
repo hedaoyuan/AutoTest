@@ -5,8 +5,13 @@ In autoCompare, it will automatically generate the parameters required to call t
 And synchronizes the initial values of the parameters of the two member functions.
 Finally, verify that the results of the two member functions are the same.
 
-`g++ -O3 -std=c++14 auto_compare.cpp`
 ```
+#if (__cplusplus >= 201402L)
+  // if c++14
   autoCompare(&CpuMatrix::add, &GpuMatrix::add);
+#else
+  // if c++11
+  autoCompare<0, 1>(&CpuMatrix::add, &GpuMatrix::add);
+#endif
 ```
 
