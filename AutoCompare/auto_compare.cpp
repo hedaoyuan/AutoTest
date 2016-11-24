@@ -87,6 +87,8 @@ void autoCompare(R1 (C1::*f1)(Args1...), R2 (C2::*f2)(Args2...)) {
     for (auto width : {1, 5}) {
       C1 obj1(height, width);
       C2 obj2(height, width);
+      init(obj1);
+      copy(obj2, obj1);
 
       auto tuple1 = std::make_tuple(
         construct<typename std::decay<
