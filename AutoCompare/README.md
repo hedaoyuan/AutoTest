@@ -17,6 +17,7 @@ Finally, verify that the results of the two member functions are the same.
 
 ## Code logic
 The main code logic is in the detail::autoCompare function.
+
 1. Constructs a set of arguments based on the argument types of member function passed in, and stored in a `std::tuple`.
 2. Initializes all the elements in the tuple, need to wrap an init function for all possible types.
 3. Constructs a generic function template to call back the incoming member function.
